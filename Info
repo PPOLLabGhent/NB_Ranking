@@ -1,0 +1,15 @@
+NRC Dataset (GSE85047) 
+  - expression data 
+    - Input: mRNA_expression_data.txt & 20111216_NRC_samples.xlsx
+    - Output: lm expression csv file 
+    - Nodig: mRNA info.txt (probe - gene) 
+  - copy number variation data 
+    - Input: 20111106_NRCdata_wavecorrected_en_Dublin_CBS.txt
+    - Output: gene_level_cnvS_SBK_hg18_hg19_hg38.csv
+    - Nodig: hg18ToHg19.over.chain & hg19ToHg38.over.chain
+	- Script: Transform_CNVData_hg18_to_hg38.R
+
+PDP Dataset (https://pubmed.ncbi.nlm.nih.gov/30375995/) 
+
+TH-MYCN Dataset (https://pubmed.ncbi.nlm.nih.gov/34638267/) 
+-> misschien niet nodig? 
