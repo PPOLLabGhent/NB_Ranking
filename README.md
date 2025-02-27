@@ -18,13 +18,16 @@ In this study, we used the Neuroblastoma Research Consortium (NRC) dataset (GSE8
 The final results, including the CNV status (gain, loss, or normal) for each gene and sample, were compiled into a CSV file: *gene_level_cnvS_SBK_hg18_hg19_hg38.csv*. This first steps were done using *Transform_CNVData_hg18_to_hg38.R*. 
 
 *Gene Expression* data mapped to the hg18 reference genome:
-  1.	mRNA_expression_data.txt containing gene expression data and probe ID’s 
+  1.	mRNA_expression_data.txt containing gene expression data and probe ID’s
     •	Probe-level identifiers were mapped to gene symbols using mRNA info.txt
+    
     •	Probes that did not map to a known gene were excluded. 
+    
     •	If multiple probes mapped to the same gene, the first occurrence was retained
+    
     •	Expression data were normalized using L2 normalization (sklearn.preprocessing.normalize) across genes to standardize expression values.
 
-  2.	20111216_NRC_samples.xlsx containing metadata information 
+  3.	20111216_NRC_samples.xlsx containing metadata information 
     •	Annotation was based on the INSS stage and the MYCN amplification status 
     •	Stage 3 and 4 with a MYCN amplification – highstage_ampl
     •	Stage 3 and 4 without a MYCN amplification – highstage_sc 
