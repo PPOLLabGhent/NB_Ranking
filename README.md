@@ -8,6 +8,7 @@ In this study, we used the Neuroblastoma Research Consortium (NRC) dataset (GSE8
   1.	Lift over from hg18 -> hg19 -> hg38 using chain files from the UCSC Genome Browser
   2.	Annotation of the regions using biomaRt 
   3.	Classify CNV regions based on Depuydt et al. (2018) thresholds
+     
       - Gain: Mean CNV ratio ≥ 0.15
       - Loss: Mean CNV ratio ≤ -0.25
       - Normal: CNV ratios falling between these thresholds
