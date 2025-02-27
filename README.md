@@ -17,12 +17,14 @@ The final results, including the CNV status (gain, loss, or normal) for each gen
 
 *Gene Expression* data mapped to the hg18 reference genome:
   1.	mRNA_expression_data.txt containing gene expression data and probe ID’s
+     
      - Probe-level identifiers were mapped to gene symbols using mRNA info.txt
      - Probes that did not map to a known gene were excluded. 
      - If multiple probes mapped to the same gene, the first occurrence was retained
      - Expression data were normalized using L2 normalization (sklearn.preprocessing.normalize) across genes to standardize expression values.
 
-  3.	20111216_NRC_samples.xlsx containing metadata information 
+  2.	20111216_NRC_samples.xlsx containing metadata information
+     
      - Annotation was based on the INSS stage and the MYCN amplification status 
      - Stage 3 and 4 with a MYCN amplification – highstage_ampl
      - Stage 3 and 4 without a MYCN amplification – highstage_sc 
@@ -42,6 +44,7 @@ The output of the linear model was saved as a CVS file: *gene_results_lm_SLB_V4_
 Based on the linear model, a ranking of genes per chromosomal arm is performed using the *NB_Ranking_SLB.py* script. 
 
 The analyzeCNAspread function will determine how frequently a chromosomal arm is altered across patients.  This is based on a dataset combined of 556 high risk neuroblastoma patients from Depuydt et al. (2018). 
+
   1.	Segmentation analysis of the PDP, where thresholds classify regions as gains or losses based on their log2 ratios.
      
   2.	Each altered region is mapped to its corresponding genes using genomic coordinates (hg38)
@@ -54,19 +57,22 @@ The next function rankNBaccordingToMYCNstatus will use this penetrance value and
      
   2.	Only chromosomal regions altered in at least 25% of cases are considered
      
-  3.	Evaluate key properties for each altered chromosomal arm: 
+  3.	Evaluate key properties for each altered chromosomal arm:
+     
      - Gene Density: The number of genes per unit length of the chromosome.
      - Gain/Loss Ratio: The proportion of gains versus losses on a chromosomal arm.
      - Significance Testing: A binomial test checks whether gains or losses are more dominant, ensuring only statistically significant alterations are kept.
 
   4.	Aggregate CNAs for each patient and determines the frequency with which each gene is altered across all samples, producing a gene penetrance score
      
-  5.	Genes within significantly altered chromosomal arms are ranked based on three biological metrics:
+  6.	Genes within significantly altered chromosomal arms are ranked based on three biological metrics:
+     
      - Copy Number Frequency (CNrank): Genes altered frequently across samples are ranked higher
      - Dosage Sensitivity (dosagerank): Derived from linear models predicting changes in gene expression due to CNAs, this metric assesses how sensitive gene expression is to copy number variations (higher sensitivity = better rank)
      - Survival Association/Risk Classification (riskrank): Based on statistical models linking gene alterations to patient survival outcomes
 
-  6.	For each chromosomal arm, a final combined ranking is computed based on three key parameters:
+  7.	For each chromosomal arm, a final combined ranking is computed based on three key parameters:
+     
      - Penetrance: This score reflects the fraction of patients in which that gene is altered.
      - Dosagelm: The correlation between copy number variation and gene expression.
      - Risklm: The association between gene alterations and survival risk classification.
