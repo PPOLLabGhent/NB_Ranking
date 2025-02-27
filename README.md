@@ -17,20 +17,17 @@ The final results, including the CNV status (gain, loss, or normal) for each gen
 
 *Gene Expression* data mapped to the hg18 reference genome:
   1.	mRNA_expression_data.txt containing gene expression data and probe ID’s
-    •	Probe-level identifiers were mapped to gene symbols using mRNA info.txt
-    
-    •	Probes that did not map to a known gene were excluded. 
-    
-    •	If multiple probes mapped to the same gene, the first occurrence was retained
-    
-    •	Expression data were normalized using L2 normalization (sklearn.preprocessing.normalize) across genes to standardize expression values.
+     - Probe-level identifiers were mapped to gene symbols using mRNA info.txt
+     - Probes that did not map to a known gene were excluded. 
+     - If multiple probes mapped to the same gene, the first occurrence was retained
+     - Expression data were normalized using L2 normalization (sklearn.preprocessing.normalize) across genes to standardize expression values.
 
   3.	20111216_NRC_samples.xlsx containing metadata information 
-    •	Annotation was based on the INSS stage and the MYCN amplification status 
-    •	Stage 3 and 4 with a MYCN amplification – highstage_ampl
-    •	Stage 3 and 4 without a MYCN amplification – highstage_sc 
-    •	Stage 1, 2 and 4s with a MYCN amplification – lowstage_ampl
-    •	Stage 1, 2 and 4s without a MYCN amplification – lowstage_sc 
+     - Annotation was based on the INSS stage and the MYCN amplification status 
+     - Stage 3 and 4 with a MYCN amplification – highstage_ampl
+     - Stage 3 and 4 without a MYCN amplification – highstage_sc 
+     - Stage 1, 2 and 4s with a MYCN amplification – lowstage_ampl
+     - Stage 1, 2 and 4s without a MYCN amplification – lowstage_sc 
 
 The intersection of sample IDs across metadata, expression, and CNV datasets identified 219 common samples for analysis.
 
@@ -58,21 +55,21 @@ The next function rankNBaccordingToMYCNstatus will use this penetrance value and
   2.	Only chromosomal regions altered in at least 25% of cases are considered
      
   3.	Evaluate key properties for each altered chromosomal arm: 
-    •	Gene Density: The number of genes per unit length of the chromosome.
-    •	Gain/Loss Ratio: The proportion of gains versus losses on a chromosomal arm.
-    •	Significance Testing: A binomial test checks whether gains or losses are more dominant, ensuring only statistically significant alterations are kept.
+     - Gene Density: The number of genes per unit length of the chromosome.
+     - Gain/Loss Ratio: The proportion of gains versus losses on a chromosomal arm.
+     - Significance Testing: A binomial test checks whether gains or losses are more dominant, ensuring only statistically significant alterations are kept.
 
   4.	Aggregate CNAs for each patient and determines the frequency with which each gene is altered across all samples, producing a gene penetrance score
      
   5.	Genes within significantly altered chromosomal arms are ranked based on three biological metrics:
-    •	Copy Number Frequency (CNrank): Genes altered frequently across samples are ranked higher
-    •	Dosage Sensitivity (dosagerank): Derived from linear models predicting changes in gene expression due to CNAs, this metric assesses how sensitive gene expression is to copy number variations (higher sensitivity = better rank)
-    •	Survival Association/Risk Classification (riskrank): Based on statistical models linking gene alterations to patient survival outcomes
+     - Copy Number Frequency (CNrank): Genes altered frequently across samples are ranked higher
+     - Dosage Sensitivity (dosagerank): Derived from linear models predicting changes in gene expression due to CNAs, this metric assesses how sensitive gene expression is to copy number variations (higher sensitivity = better rank)
+     - Survival Association/Risk Classification (riskrank): Based on statistical models linking gene alterations to patient survival outcomes
 
   6.	For each chromosomal arm, a final combined ranking is computed based on three key parameters:
-    •	Penetrance: This score reflects the fraction of patients in which that gene is altered.
-    •	Dosagelm: The correlation between copy number variation and gene expression.
-    •	Risklm: The association between gene alterations and survival risk classification.
+     - Penetrance: This score reflects the fraction of patients in which that gene is altered.
+     - Dosagelm: The correlation between copy number variation and gene expression.
+     - Risklm: The association between gene alterations and survival risk classification.
 
 To generate a comprehensive ranking score, the three parameters are first normalized using percentile ranking (percentile rank = rank / total count). Then, these ranks are multiplied across the three parameters to produce a final combined ranking score for each gene.
 
