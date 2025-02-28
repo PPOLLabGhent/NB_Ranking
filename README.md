@@ -87,7 +87,7 @@ To generate a comprehensive ranking score, the three parameters are first normal
 
         docker build -t nb_ranking_slb .
     
- 3. Download InputData (and of OutputData) from xxx
+ 3. Download InputData (and of OutputData) from Bekaert, Sarah-Lee (2025), “NB_Ranking”, Mendeley Data, V1, doi: 10.17632/8tyskd7cmg.1
     
  4. Mount InputData (and of OutputData) to Docker container
 
