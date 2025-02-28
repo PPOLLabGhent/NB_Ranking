@@ -91,4 +91,4 @@ To generate a comprehensive ranking score, the three parameters are first normal
     
  4. Mount InputData (and of OutputData) to Docker container
 
-        docker run -v "C:\Users\svbekaer\OneDrive - UGent\Documenten\Docker\FilesToPublish\InputData:/code/nb_ranking/InputData" -v "C:\Users\svbekaer\OneDrive - UGent\Documenten\Docker\FilesToPublish\OutputData:/code/nb_ranking_OutputData" -it nb_ranking_slb bash
+        docker run -v "C:\Users\svbekaer\OneDrive - UGent\Documenten\Docker\FilesToPublish\InputData:/code/nb_ranking/InputData" -v "C:\Users\svbekaer\OneDrive - UGent\Documenten\Docker\FilesToPublish\OutputData:/code/nb_ranking/OutputData" -it nb_ranking_slb bash
