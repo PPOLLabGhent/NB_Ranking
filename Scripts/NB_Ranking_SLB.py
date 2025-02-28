@@ -37,7 +37,7 @@ dlms = pd.read_csv(
         '/code/nb_ranking/OutputData/gene_resuls_lm_SLB_V4_hg38.csv'
     ),index_col=0)
 
-# Load CNV profiles -> gewoon om de regio's van interesse te bepalen denk ik - ik denk het niet (checken!!!!)
+# Load CNV profiles -> frequency plot
 cnvd = get_UHRprofiles() #cnvd wordt gebruikt in analyzeCNAspread en rankNBaccordingToMYCNstatus 
 # FIXED! 
 

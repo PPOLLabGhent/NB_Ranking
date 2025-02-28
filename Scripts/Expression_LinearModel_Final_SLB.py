@@ -20,8 +20,8 @@ pandas2ri.activate()
 stats = importr('stats')
 
 # Step 1: Load Expression and Metadata Files
-expression_file = '/code/nb_ranking/InputData/mRNA_expression_data.txt'  # Update path
-metadata_file = '/code/nb_ranking/InputData/20111216_NRC_samples.xlsx'   # Read file and skip first 4 lines because info 
+expression_file = '/code/nb_ranking/InputData/NRC_Dataset/mRNA_expression_data.txt'  # Update path
+metadata_file = '/code/nb_ranking/InputData/NRC_Dataset/20111216_NRC_samples.xlsx'   # Read file and skip first 4 lines because info 
 cnvdata_file = '/code/nb_ranking/InputData/gene_level_cnvS_SBK_hg18_hg19_hg38.csv'    # Mapping based on lift over hg18 -> hg19 -> hg38
 
 
@@ -57,7 +57,7 @@ cnv_pivot = cnv_data.pivot_table(index='gene', columns='sample', values='conugea
 
 # Step 2: Rename the Probe ID's to Hugo Id's 
 # Path to probe-gene mapping file
-probe_to_gene_file = '/code/nb_ranking/InputData/mRNA info.txt'  # Update path
+probe_to_gene_file = '/code/nb_ranking/InputData/NRC_Dataset/mRNA info.txt'  # Update path
 # Load the mapping file
 probe_to_gene = pd.read_csv(probe_to_gene_file, sep='\t', header=None, names=['probe', 'gene'])
 # Create a dictionary for mapping
