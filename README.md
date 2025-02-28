@@ -85,7 +85,7 @@ To generate a comprehensive ranking score, the three parameters are first normal
 
  2. Build the Docker Container from the local GitHub Repo
 
-        docker build -t nb_ranking_SLB
+        docker build -t nb_ranking_slb .
     
  3. Download InputData (and of OutputData) from xxx
     
