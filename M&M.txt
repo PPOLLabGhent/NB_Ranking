@@ -1,4 +1,4 @@
-**Methods Summary: Neuroblastoma Gene Ranking Analysis Using Copy Number and Expression Data**
+Methods Summary: Neuroblastoma Gene Ranking Analysis Using Copy Number and Expression Data
 
 1. Data Preparation and Genome Coordinate Alignment
 We used the Neuroblastoma Research Consortium (NRC) dataset (GSE85047), which includes gene expression and copy number variation (CNV) data mapped to the hg18 genome build. To ensure compatibility with modern genomic annotations, we performed a two-step liftOver of CNV regions:
