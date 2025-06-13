@@ -1,6 +1,6 @@
 ## Neuroblastoma Gene Ranking Analysis 
 
-Based on analysis from Christophe Van Neste - https://github.com/CVNResearch/nb_ranking 
+Based on analysis by Christophe Van Neste, available at https://github.com/CVNResearch/nb_ranking 
 
 **Preparing Input Files**
 
