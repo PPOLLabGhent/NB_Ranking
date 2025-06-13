@@ -1,5 +1,7 @@
 ## Neuroblastoma Gene Ranking Analysis 
 
+Based on analysis from Christophe Van Neste - https://github.com/CVNResearch/nb_ranking 
+
 **Preparing Input Files**
 
 In this study, we used the Neuroblastoma Research Consortium (NRC) dataset (GSE85047). 
