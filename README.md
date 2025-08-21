@@ -17,7 +17,7 @@ In this study, we used the Neuroblastoma Research Consortium (NRC) dataset (GSE8
 
 The final results, including the CNV status (gain, loss, or normal) for each gene and sample, were compiled into a CSV file: *gene_level_cnvS_SBK_hg18_hg19_hg38.csv*. This first steps were done using *Transform_CNVData_hg18_to_hg38.R*. 
 
-*Gene Expression* data mapped to the hg18 reference genome:
+*Gene Expression* data mapped to the hg38 reference genome:
   1.	mRNA_expression_data.txt containing gene expression data and probe ID’s
      
      - Probe-level identifiers were mapped to gene symbols using mRNA info.txt
@@ -94,3 +94,4 @@ To generate a comprehensive ranking score, the three parameters are first normal
  4. Mount InputData (and of OutputData) to Docker container
 
         docker run -v "C:\Users\svbekaer\OneDrive - UGent\Documenten\Docker\FilesToPublish\InputData:/code/nb_ranking/InputData" -v "C:\Users\svbekaer\OneDrive - UGent\Documenten\Docker\FilesToPublish\OutputData:/code/nb_ranking/OutputData" -it nb_ranking_slb bash
+
